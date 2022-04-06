@@ -1,0 +1,22 @@
+<div [formGroup]="addOneUserForm">
+  <input formControlName="firstname" placeholder="firstname" type="text">
+  <input formControlName="lastname" placeholder="lastname" type="text">
+  <select formControlName="books" multiple>
+    <option *ngFor=" let book  of books | async" [ngValue]="book.id">
+      {{ book.title }}
+    </option>
+  </select>
+  <button (click)="addNewUser(addOneUserForm.value)" [disabled]="addOneUserForm.invalid">SUBMIT</button>
+</div>
+<ul *ngIf="{users: users | async} as data">
+  <div *ngFor="let user of data.users">
+    <li *ngIf="user.state == 'Active'">
+      [{{user.id}}] {{user.firstname}} - {{user.lastname}} |
+      <button (click)="selectUser(user.id)">View User</button>
+      |
+      <button (click)="editUser(user.id)">Update</button>
+      |
+      <button (click)="deleteUser(user.id)">Delete</button>
+    </li>
+  </div>
+</ul>

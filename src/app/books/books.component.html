@@ -1,0 +1,13 @@
+<div [formGroup]="addOneBookForm">
+  <input formControlName="title" placeholder="title" type="text">
+  <input formControlName="author" placeholder="author" type="text">
+  <button (click)="addNewBook(addOneBookForm.value)" [disabled]="addOneBookForm.invalid">SUBMIT</button>
+</div>
+
+<ul *ngIf="{books: books | async} as data">
+  <li *ngFor="let book of data.books">[{{book.id}}] {{book.title}} - {{book.author}}</li>
+</ul>
+
+<div>
+  <button (click)="navigateToUserPage()">user page</button>
+</div>

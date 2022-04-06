@@ -1,0 +1,20 @@
+<ng-container *ngIf="{user: user | async, userBooksTitles: userBooksTitles | async} as data">
+  <div>
+    <input formControlName="firstname" placeholder="{{data?.user?.firstname}}" type="text">
+    <input formControlName="lastname" placeholder="{{data?.user?.lastname}}" type="text">
+    <select formControlName="listOfBooksId" multiple>
+      <option *ngFor=" let bookTitle  of userBooksTitles | async">
+        {{ bookTitle }}
+      </option>
+    </select>
+    <div>_____{{ data?.user?.id }}_______</div>
+    <div>
+      <button (click)="updateUser(updateUserForm.value,data?.user?.id)" [disabled]="updateUserForm.invalid">UPDATE
+      </button>
+    </div>
+  </div>
+</ng-container>
+
+
+
+
