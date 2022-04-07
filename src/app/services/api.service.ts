@@ -14,8 +14,8 @@ export class ApiService {
   constructor(private readonly httpClient: HttpClient) {
   }
 
-  getBooks(): Observable<HttpResponse<JsonApiResponse<Books>>> {
-    return this.httpClient.get<JsonApiResponse<Books>>(`${environment.apiUrl}/books`, {observe: 'response'});
+  getBooks(): Observable<HttpResponse<Books>> {
+    return this.httpClient.get<Books>(`${environment.apiUrl}/books`, {observe: 'response'});
   }
 
   addOneBook(book: Book): Observable<HttpResponse<JsonApiResponse<Book>>> {

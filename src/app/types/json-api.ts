@@ -10,7 +10,7 @@ interface JsonApiResponseInterface<T> {
   data: T extends Array<infer E> ? JsonApiData<E & JsonApiDataAttributes>[] : JsonApiData<T & JsonApiDataAttributes>;
   links: T extends Array<infer E> ? JsonApiLinks : never;
   meta: T extends Array<infer E> ? JsonApiMeta : never;
-  included?: JsonApiData<JsonApiDataAttributes>[];
+  included?: JsonApiData<any>[];
 }
 
 /************************************************************
@@ -21,9 +21,9 @@ export interface JsonApiMeta {
   totalPages: number;
   totalRecords: number;
   page: {
-    number: number,
-    size: number
-  };
+    number: number;
+    size: number;
+  }
 }
 
 interface JsonApiLinks {

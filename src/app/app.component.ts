@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log("fff")
     this.store.dispatch(fetchAllBooksAction());
     this.store.dispatch(fetchAllUsersAction());
   }

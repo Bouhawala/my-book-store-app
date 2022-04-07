@@ -18,7 +18,7 @@ enum BookEffectsActionType {
 }
 
 export const fetchAllBooksAction = createAction(BookEffectsActionType.FETCH_ALL_BOOKS);
-export const fetchAllBooksSuccessAction = createAction(BookEffectsActionType.FETCH_ALL_BOOKS_SUCCESS, (response: JsonApiResponse<Books>) => ({data: response.data}));
+export const fetchAllBooksSuccessAction = createAction(BookEffectsActionType.FETCH_ALL_BOOKS_SUCCESS, (response: Books) => ({data: response}));
 export const fetchAllBooksFailureAction = createAction(BookEffectsActionType.FETCH_ALL_BOOKS_FAILURE);
 
 
@@ -36,7 +36,7 @@ export class BookEffects {
   fetchAllBooksSuccess = createEffect(() => this.actions.pipe(
     ofType(fetchAllBooksSuccessAction),
     map(action => setAllBookAction({
-      books: action.data.map((entity: { id: any; attributes: any; }) => ({id: entity.id, ...entity.attributes}))
+      books: action.data.map(entity => ({id: entity.id, title: entity.title, author: entity.author}))
     }))
   ));
 

@@ -25,19 +25,6 @@ export function httpWrapper(
     ),
     catchError(response => {
       const actions: Action[] = [failureAction(response.error)];
-      // HTTP ERROR
-      if (!response.status || response.status < 100 || response.status >= 500) { // NO STATUS OR UNKNOWN STATUS OR SERVER ERROR
-        actions.push();
-      } else if (response.status === 401) { // UNAUTHORIZED
-        actions.push();
-      } else if (response.status === 403) { // PLEASE AUTHENTICATE
-        // actions.push(new Authenticate(response.error.errors));
-      } else if (response.status >= 400) { //  CLIENT ERROR
-        forEach(response.error.errors, error => {
-          actions.push();
-        });
-      }
-
       return scheduled<Action>(actions, queueScheduler);
     }),
     startWith()
