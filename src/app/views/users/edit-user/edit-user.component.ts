@@ -1,14 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable, Subscription} from "rxjs";
 import {tap} from "rxjs/operators";
-import {setSelectedUserIdAction} from "../../modules/store/states/user/user.action";
 import {ActivatedRoute, Router} from "@angular/router";
 import {select, Store} from "@ngrx/store";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {User} from "../../types/user.type";
-import {selectedUserSelector} from "../../modules/store/states/user/user.selector";
-import {selectedBookTitleBySelectedUser} from "../../modules/store/states/book/book.selector";
-import {updateUserEffectAction} from "../../modules/store/effects/user.effects";
+import { selectedUserSelector } from 'src/app/modules/store/states/user/user.selector';
+import { User } from 'src/app/types/user.type';
+import { selectedBookTitleBySelectedUser } from 'src/app/modules/store/states/book/book.selector';
+import { updateUserEffectAction } from 'src/app/modules/store/effects/user.effects';
+import { setSelectedUserIdAction } from 'src/app/modules/store/states/user/user.action';
 
 @Component({
   selector: 'app-edit-user',

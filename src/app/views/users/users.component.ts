@@ -2,13 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {select, Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
-import {deleteUserEffectAction, saveNewUserAction, updateUserEffectAction} from '../modules/store/effects/user.effects';
-import {usersSelector} from '../modules/store/states/user/user.selector';
-import {ApiService} from '../services/api.service';
-import {User, Users} from '../types/user.type';
 import {Router} from "@angular/router";
-import {Books} from "../types/book.type";
-import {booksSelector} from "../modules/store/states/book/book.selector";
+import { User, Users } from 'src/app/types/user.type';
+import { usersSelector } from 'src/app/modules/store/states/user/user.selector';
+import { booksSelector } from 'src/app/modules/store/states/book/book.selector';
+import { Books } from 'src/app/types/book.type';
+import { ApiService } from 'src/app/services/api.service';
+import { deleteUserEffectAction, saveNewUserAction } from 'src/app/modules/store/effects/user.effects';
 
 @Component({
   selector: 'app-users',

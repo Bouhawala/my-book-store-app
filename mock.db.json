@@ -135,15 +135,6 @@
       "id": 27
     },
     {
-      "firstname": "patrick",
-      "lastname": "lepont",
-      "listOfUserBooks": [
-        2,
-        3
-      ],
-      "id": 28
-    },
-    {
       "firstname": "pierre",
       "lastname": "faujin",
       "listOfBooksId": [

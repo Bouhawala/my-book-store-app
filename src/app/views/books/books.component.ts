@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiService} from '../services/api.service';
 import {Observable, of} from 'rxjs';
-import {Book, Books} from '../types/book.type';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {select, Store} from '@ngrx/store';
-import {booksSelector} from '../modules/store/states/book/book.selector';
-import {fetchAllBooksAction, saveNewBookAction} from '../modules/store/effects/book.effects';
 import { Router } from '@angular/router';
+import { Book, Books } from 'src/app/types/book.type';
+import { booksSelector } from 'src/app/modules/store/states/book/book.selector';
+import { ApiService } from 'src/app/services/api.service';
+import { saveNewBookAction } from 'src/app/modules/store/effects/book.effects';
 
 @Component({
   selector: 'app-books',

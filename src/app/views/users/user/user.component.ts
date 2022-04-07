@@ -1,12 +1,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Observable, Subscription} from "rxjs";
 import {select, Store} from "@ngrx/store";
-import {selectedUserSelector} from "../modules/store/states/user/user.selector";
-import {User} from "../types/user.type";
 import {ActivatedRoute} from "@angular/router";
 import {tap} from "rxjs/operators";
-import {setSelectedUserIdAction} from "../modules/store/states/user/user.action";
-import {selectedBookTitleBySelectedUser} from "../modules/store/states/book/book.selector";
+import { User } from 'src/app/types/user.type';
+import { selectedUserSelector } from 'src/app/modules/store/states/user/user.selector';
+import { selectedBookTitleBySelectedUser } from 'src/app/modules/store/states/book/book.selector';
+import { setSelectedUserIdAction } from 'src/app/modules/store/states/user/user.action';
 
 @Component({
   selector: 'app-user',

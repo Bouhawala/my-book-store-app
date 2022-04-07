@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {BooksComponent} from './books/books.component';
-import {UsersComponent} from './users/users.component';
-import {UserComponent} from "./user/user.component";
-import {EditUserComponent} from "./users/edit-user/edit-user.component";
+import { BooksComponent } from 'src/app/views/books/books.component';
+import { EditUserComponent } from 'src/app/views/users/edit-user/edit-user.component';
+import { UserComponent } from 'src/app/views/users/user/user.component';
+import { UsersComponent } from 'src/app/views/users/users.component';
 
 const routes: Routes = [
   {
@@ -33,4 +33,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class RoutingModule { }
