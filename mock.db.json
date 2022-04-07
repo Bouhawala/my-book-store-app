@@ -98,23 +98,6 @@
   ],
   "users": [
     {
-      "firstname": "azddadazd",
-      "lastname": "zadzdzadazd",
-      "listOfBooksId": [
-        3,
-        4
-      ],
-      "id": 20
-    },
-    {
-      "firstname": "azda",
-      "lastname": "adazdazdazdazdza",
-      "listOfBooksId": [
-        3
-      ],
-      "id": 22
-    },
-    {
       "firstname": "azdazdzadazd",
       "lastname": "adzdazdzadaz",
       "listOfBooksId": [
