@@ -2,8 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {select, Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
-import {deleteUserEffectAction, saveNewUserAction} from '../modules/store/effects/user.effects';
+import {deleteUserEffectAction, saveNewUserAction, updateUserEffectAction} from '../modules/store/effects/user.effects';
 import {usersSelector} from '../modules/store/states/user/user.selector';
+import {ApiService} from '../services/api.service';
 import {User, Users} from '../types/user.type';
 import {Router} from "@angular/router";
 import {Books} from "../types/book.type";
@@ -21,14 +22,14 @@ export class UsersComponent implements OnInit {
   addOneUserForm: FormGroup = new FormGroup({
     firstname: new FormControl('', [Validators.required]),
     lastname: new FormControl('', [Validators.required]),
-    books: new FormControl(null)
+    listOfBooksId: new FormControl(null)
   });
 
   users: Observable<Users> = this.store.pipe(select(usersSelector));
   books: Observable<Books> = this.store.pipe(select(booksSelector));
 
 
-  constructor(private readonly store: Store, private router: Router) {
+  constructor(private readonly store: Store, private apiService: ApiService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -50,7 +51,8 @@ export class UsersComponent implements OnInit {
   }
 
   deleteUser(id: number | any) {
-    this.store.dispatch(deleteUserEffectAction({id}))
+    this.store.dispatch(deleteUserEffectAction({id}));
+    this.router.navigateByUrl('users');
 
   }
 

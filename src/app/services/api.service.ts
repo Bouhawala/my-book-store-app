@@ -1,10 +1,9 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpResponse} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Book, Books} from '../types/book.type';
 import {environment} from '../../environments/environment';
 import {User, Users} from '../types/user.type';
-import {JsonApiResponse} from "../types/json-api";
 
 @Injectable({
   providedIn: 'root'
@@ -14,27 +13,26 @@ export class ApiService {
   constructor(private readonly httpClient: HttpClient) {
   }
 
-  getBooks(): Observable<HttpResponse<Books>> {
-    return this.httpClient.get<Books>(`${environment.apiUrl}/books`, {observe: 'response'});
+  getBooks(): Observable<Books> {
+    return this.httpClient.get<Books>(`${environment.apiUrl}/books`);
   }
 
-  addOneBook(book: Book): Observable<HttpResponse<JsonApiResponse<Book>>> {
-    return this.httpClient.post<JsonApiResponse<Book>>(`${environment.apiUrl}/books/commands/create`, book, {observe: 'response'});
+  addOneBook(book: Book): Observable<Book> {
+    return this.httpClient.post<Book>(`${environment.apiUrl}/books`, book);
   }
 
-  getUsers(): Observable<HttpResponse<JsonApiResponse<Users>>> {
-    return this.httpClient.get<JsonApiResponse<Users>>(`${environment.apiUrl}/users`, {observe: 'response'});
+  getUsers(): Observable<Users> {
+    return this.httpClient.get<Users>(`${environment.apiUrl}/users`);
   }
 
-  addUser(user: User): Observable<HttpResponse<JsonApiResponse<User>>> {
-    return this.httpClient.post<JsonApiResponse<User>>(`${environment.apiUrl}/users/commands/create`, user, {observe: 'response'});
+  addUser(user: User): Observable<User> {
+    return this.httpClient.post<User>(`${environment.apiUrl}/users`,user);
   }
 
-  updateUser(id: string | number | undefined, user: User): Observable<HttpResponse<JsonApiResponse<User>>> {
-    return this.httpClient.put<JsonApiResponse<User>>(`${environment.apiUrl}/users/${id}/commands/update`, user, {observe: 'response'});
+  updateUser(user: User): Observable<User> {
+    return this.httpClient.put<User>(`${environment.apiUrl}/users/`+user.id,user);
   }
-
-  removeUser(id: string | number | undefined): Observable<HttpResponse<JsonApiResponse<User>>> {
-    return this.httpClient.put<JsonApiResponse<User>>(`${environment.apiUrl}/users/${id}/commands/archive`, {}, {observe: 'response'});
+  removeUser(id: number): Observable<User> {
+    return this.httpClient.delete<any>(`${environment.apiUrl}/users/`+id);
   }
 }

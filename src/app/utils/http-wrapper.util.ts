@@ -11,7 +11,7 @@ import {forEach} from 'lodash';
  * NOTE : Use the effect pattern : action, success, failure
  */
 export function httpWrapper(
-  httpResponse: Observable<HttpResponse<any>>,
+  httpResponse: Observable<any>,
   successAction: ActionCreator<string, any>,
   failureAction: ActionCreator<string, any>): Observable<Action> {
 

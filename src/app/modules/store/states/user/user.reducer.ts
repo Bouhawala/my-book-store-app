@@ -1,22 +1,25 @@
 import {createReducer, on} from '@ngrx/store';
 import {
-  addOneUserAction,
-  deleteUserAction,
+  addOneUserAction, deleteUserAction,
   setAllUserAction,
   setSelectedUserIdAction,
   updateUserAction
 } from './user.action';
-import {User} from 'src/app/types/user.type';
+import {User, Users} from 'src/app/types/user.type';
+import {createEntityAdapter, EntityAdapter} from "@ngrx/entity";
+import {Book, Books} from "../../../../types/book.type";
 
 export interface UserState {
-  entities: any;
-  selectedUserId: string | null;
+  entities: Users;
+  selectedUserId: number | null;
 }
 
 const initialUserState: UserState = {
   entities: [],
   selectedUserId: null
 }
+export const adapter: EntityAdapter<User> = createEntityAdapter<User>();
+
 
 export const userReducer = createReducer(
   initialUserState,
@@ -27,19 +30,32 @@ export const userReducer = createReducer(
       }
     )
   ),
-  on(setAllUserAction, (state, {users}) => ({...state, entities: users})),
-  on(setSelectedUserIdAction, (state, action) => ({...state, selectedUserId: action.id})),
-  on(updateUserAction, (state, {user}) => ({
-    ...state,
-    entities: [user, ...state.entities]
-  })),
-  on(deleteUserAction, (state, action) => {
-    const updatedUsers = state.entities.filter((u: User) => {
-      return u.id !== action.id;
-    });
+  on(setAllUserAction, (state, action) => ({...state, entities: action.users})),
+  on(setSelectedUserIdAction,(state,action) => ({...state,selectedUserId: action.id})),
+  on(updateUserAction,(state,action) => {
+
+
+      return  {
+        ...state,
+        entities: [...updateEntitiesUsers(state.entities,action.user)]
+      }
+
+  }
+
+
+
+  ),
+  on(deleteUserAction, (state,action) => {
+
+
     return {
-      ...state,
-      entities: updatedUsers
-    };
-  })
-);
+      ...state,...state.entities.filter(user => user.id !== action.id)
+    }
+
+  }))
+
+export  function updateEntitiesUsers(entities: Users,user: User){
+  const elementIndex = entities.findIndex(u => u.id == user.id);
+  entities[elementIndex] = user;
+  return entities;
+}

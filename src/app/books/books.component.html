@@ -1,6 +1,6 @@
 <div [formGroup]="addOneBookForm">
-  <input formControlName="title" placeholder="title" type="text">
-  <input formControlName="author" placeholder="author" type="text">
+  <input type="text" formControlName="title" placeholder="title">
+  <input type="text" formControlName="author" placeholder="author">
   <button (click)="addNewBook(addOneBookForm.value)" [disabled]="addOneBookForm.invalid">SUBMIT</button>
 </div>
 
