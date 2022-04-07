@@ -33,26 +33,17 @@ export const userReducer = createReducer(
   on(setAllUserAction, (state, action) => ({...state, entities: action.users})),
   on(setSelectedUserIdAction,(state,action) => ({...state,selectedUserId: action.id})),
   on(updateUserAction,(state,action) => {
-
-
       return  {
         ...state,
         entities: [...updateEntitiesUsers(state.entities,action.user)]
-      }
-
-  }
-
-
-
-  ),
+      }}),
   on(deleteUserAction, (state,action) => {
-
-
+    const updatedUsers = state.entities.filter(user => {
+      return user.id !== action.id
+    })
     return {
-      ...state,...state.entities.filter(user => user.id !== action.id)
-    }
-
-  }))
+      ...state, entities: updatedUsers
+    }}))
 
 export  function updateEntitiesUsers(entities: Users,user: User){
   const elementIndex = entities.findIndex(u => u.id == user.id);
