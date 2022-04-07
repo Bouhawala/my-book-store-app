@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Observable, Subscription} from "rxjs";
 import {tap} from "rxjs/operators";
 import {setSelectedUserIdAction} from "../../modules/store/states/user/user.action";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {select, Store} from "@ngrx/store";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {User} from "../../types/user.type";
@@ -39,7 +39,9 @@ export class EditUserComponent implements OnInit {
   routerIdTriggerSubscription: Subscription | undefined;
   routerIdTrigger: Observable<any> = this.activatedRoute.params.pipe(tap(params => this.store.dispatch(setSelectedUserIdAction({id: params.id}))));
 
-  constructor(private readonly activatedRoute: ActivatedRoute, private readonly store: Store) {
+  constructor(private readonly activatedRoute: ActivatedRoute,
+              private router: Router,
+              private readonly store: Store) {
     this.selectedIndex = undefined;
   }
 
@@ -48,9 +50,8 @@ export class EditUserComponent implements OnInit {
   }
 
   updateUser(user: User, index: number | string | undefined): void {
-    user.id = index;
     this.store.dispatch(updateUserEffectAction({user}));
-    this.selectedIndex = undefined;
+    this.router.navigate(['users'])
   }
 
 }

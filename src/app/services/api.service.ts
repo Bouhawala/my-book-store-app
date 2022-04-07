@@ -30,7 +30,7 @@ export class ApiService {
   }
 
   updateUser(user: User): Observable<User> {
-    return this.httpClient.put<User>(`${environment.apiUrl}/users/`+user.id,user);
+    return this.httpClient.put<User>(`${environment.apiUrl}/users/`+user?.id,user);
   }
   removeUser(id: number): Observable<User> {
     return this.httpClient.delete<any>(`${environment.apiUrl}/users/`+id);

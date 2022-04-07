@@ -28,6 +28,7 @@ export class UserComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.user.subscribe(res => console.log(res))
     this.routerIdTriggerSubscription = this.routerIdTrigger.subscribe();
   }
 

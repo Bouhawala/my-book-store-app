@@ -16,7 +16,7 @@ export interface UserState {
 
 const initialUserState: UserState = {
   entities: [],
-  selectedUserId: null
+  selectedUserId: null,
 }
 export const adapter: EntityAdapter<User> = createEntityAdapter<User>();
 
@@ -33,9 +33,12 @@ export const userReducer = createReducer(
   on(setAllUserAction, (state, action) => ({...state, entities: action.users})),
   on(setSelectedUserIdAction,(state,action) => ({...state,selectedUserId: action.id})),
   on(updateUserAction,(state,action) => {
+    const updatedUser = state.entities.map(user => {
+      return action.user.id === user.id ? action.user : user;
+    })
       return  {
         ...state,
-        entities: [...updateEntitiesUsers(state.entities,action.user)]
+        entities: updatedUser
       }}),
   on(deleteUserAction, (state,action) => {
     const updatedUsers = state.entities.filter(user => {

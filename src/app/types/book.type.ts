@@ -5,9 +5,4 @@ export interface Book extends Response {
   author?: string;
 }
 
-export enum State {
-  ACTIVE = 'Active',
-  UNACTIVE = 'Unactive'
-}
-
 export type Books = Book[];

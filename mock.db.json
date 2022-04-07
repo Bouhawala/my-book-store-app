@@ -98,12 +98,10 @@
   ],
   "users": [
     {
-      "firstname": "azdazdzadazd",
-      "lastname": "adzdazdzadaz",
+      "firstname": "fdfd",
+      "lastname": "fddf",
       "listOfBooksId": [
-        2,
-        3,
-        4
+        null
       ],
       "id": 23
     },
@@ -116,14 +114,6 @@
         3
       ],
       "id": 24
-    },
-    {
-      "firstname": "aad",
-      "lastname": "dzaddddd",
-      "listOfBooksId": [
-        4
-      ],
-      "id": 25
     },
     {
       "firstname": "ramy",
