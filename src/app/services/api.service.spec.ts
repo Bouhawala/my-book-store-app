@@ -1,16 +1,24 @@
-import {TestBed} from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {HttpClientModule} from '@angular/common/http';
+import { ApiService } from './api.service';
 
-import {ApiService} from './api.service';
 
-describe('ApiService', () => {
-  let service: ApiService;
+describe('myService', () => {
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ApiService);
-  });
+      beforeEach(() => TestBed.configureTestingModule({
+        imports: [HttpClientTestingModule], 
+        providers: [ApiService]
+      }));
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+       it('should be created', () => {
+        const service: ApiService = TestBed.get(ApiService);
+        expect(service).toBeTruthy();
+       });
+
+       it('should have getUsers function', () => {
+        const service: ApiService = TestBed.get(ApiService);
+        expect(service.getUsers).toBeTruthy();
+       });
+
+    });

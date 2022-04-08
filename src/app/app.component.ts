@@ -9,7 +9,7 @@ import {fetchAllBooksAction} from "./modules/store/effects/book.effects";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'training-library-manager';
+  title = 'my-book-store-app';
 
   constructor(private readonly store: Store) {
   }
