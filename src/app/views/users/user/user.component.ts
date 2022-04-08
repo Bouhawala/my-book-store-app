@@ -21,20 +21,20 @@ export class UserComponent implements OnInit, OnDestroy {
   );
 
   routerIdTriggerSubscription: Subscription | undefined;
-  routerIdTrigger: Observable<any> = this.activatedRoute.params.pipe(tap(params => this.store.dispatch(setSelectedUserIdAction({id: params.id}))));
+  routerIdTrigger: Observable<any> = this.activatedRoute.params.pipe(tap(params => this.store.dispatch(setSelectedUserIdAction({id: +params.id}))));
 
 
-  constructor(private readonly store: Store, private readonly activatedRoute: ActivatedRoute) {
-  }
+  constructor(private readonly store: Store, private readonly activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.user.subscribe(res => console.log(res))
     this.routerIdTriggerSubscription = this.routerIdTrigger.subscribe();
   }
 
   ngOnDestroy(): void {
     this.routerIdTriggerSubscription?.unsubscribe();
   }
+
+
 
 
 }

@@ -3,7 +3,7 @@
   <input type="text" formControlName="lastname" placeholder="lastname">
   <select multiple formControlName="listOfBooksId">
     <option *ngFor="let book  of books | async" [value]="book.id" >
-    {{ book.title }}
+      {{ book.title }}
     </option>
   </select>
   <button (click)="addNewUser(addOneUserForm.value)" [disabled]="addOneUserForm.invalid">SUBMIT</button>

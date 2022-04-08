@@ -1,10 +1,9 @@
 export enum RoutesPaths {
     HOME = '',
-    CLAIMS = 'claims',
+    USERS = 'claims',
     POLICIES = 'policies',
     MESSAGING = 'messaging',
     DOCUMENTS = 'documents',
     SETTINGS = 'settings',
     CGU = 'cgu'
   }
-  

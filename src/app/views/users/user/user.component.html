@@ -1,7 +1,7 @@
-<ng-container *ngIf="{user: user | async, userBooksTitles: userBooksTitles | async} as data">
+<ng-container  *ngIf="{user: user | async, userBooksTitles: userBooksTitles | async} as data">
   <p>Username = {{ data.user?.firstname }}</p>
   <p>Lastname = {{ data.user?.lastname }}</p>
-  <p>booksId =  {{ data?.userBooksTitles | json }}</p>
+  <p>booksId =  {{ data.userBooksTitles | json }}</p>
 </ng-container>
 
 

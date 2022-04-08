@@ -1,3 +1,3 @@
 export interface Response {
-  id: string | number | undefined;
+  id: string | number;
 }

@@ -42,7 +42,7 @@ export class UsersComponent implements OnInit {
     this.addOneUserForm.reset();
   }
 
-  selectUser(id: number | string | undefined) {
+  selectUser(id: number | string) {
     this.router.navigate(['user', id]);
   }
 
