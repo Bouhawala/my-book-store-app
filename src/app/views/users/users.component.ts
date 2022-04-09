@@ -52,7 +52,7 @@ export class UsersComponent implements OnInit {
 
   deleteUser(id: number | any) {
     this.store.dispatch(deleteUserEffectAction({id}));
-    this.router.navigateByUrl('users');
+    this.router.navigate(['users']);
 
   }
 

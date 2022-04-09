@@ -100,20 +100,8 @@
     {
       "firstname": "fdfd",
       "lastname": "fddf",
-      "listOfBooksId": [
-        null
-      ],
+      "listOfBooksId": [],
       "id": 23
-    },
-    {
-      "firstname": "dazdazd",
-      "lastname": "dzda",
-      "listOfBooksId": [
-        1,
-        2,
-        3
-      ],
-      "id": 24
     },
     {
       "firstname": "ramy",
@@ -144,22 +132,19 @@
       "id": 29
     },
     {
-      "firstname": "hahaha",
-      "lastname": "hahaha",
+      "firstname": "aaaa",
+      "lastname": "aaaaaa",
+      "listOfBooksId": null,
+      "id": 32
+    },
+    {
+      "firstname": "fdfdfd",
+      "lastname": "dfdfdfd",
       "listOfBooksId": [
-        2,
         3,
         4
       ],
-      "id": 30
-    },
-    {
-      "firstname": "hyhyhy",
-      "lastname": "hyhyhy",
-      "listOfBooksId": [
-        2
-      ],
-      "id": 31
+      "id": 34
     }
   ]
 }
