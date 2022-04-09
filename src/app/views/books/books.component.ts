@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { Book, Books } from 'src/app/types/book.type';
 import { booksSelector } from 'src/app/modules/store/states/book/book.selector';
 import { ApiService } from 'src/app/services/api.service';
-import { saveNewBookAction } from 'src/app/modules/store/effects/book.effects';
+import { fetchAllBooksAction, saveNewBookAction } from 'src/app/modules/store/effects/book.effects';
 
 @Component({
   selector: 'app-books',
@@ -26,6 +26,7 @@ export class BooksComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.store.dispatch(fetchAllBooksAction());
   }
 
   addNewBook(book: Book) {

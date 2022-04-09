@@ -1,3 +1,11 @@
+<div class="row">
+  <div class="col-12">
+    <h1 class="text-center">My Book Store Application</h1>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-9">
 <div [formGroup]="addOneUserForm">
   <input type="text" formControlName="firstname" placeholder="firstname">
   <input type="text" formControlName="lastname" placeholder="lastname">
@@ -6,8 +14,13 @@
       {{ book.title }}
     </option>
   </select>
-  <button (click)="addNewUser(addOneUserForm.value)" [disabled]="addOneUserForm.invalid">SUBMIT</button>
+  <button style="margin-bottom: 20px;" class="btn btn-primary text-center" (click)="addNewUser(addOneUserForm.value)" [disabled]="addOneUserForm.invalid">
+  <span>Submit</span>
+  </button>
 </div>
+</div>
+</div>
+
 <div class="row justify-content-center">
   <div class="col-9">
 <table class="table table-hover">
@@ -21,11 +34,11 @@
     </tr>
   </thead>
   <tbody *ngIf="{users: users | async} as data">
-    <tr *ngFor="let user of data.users; let i = index" class="tr-pointer" (click)="selectUser(user.id)">
+    <tr *ngFor="let user of data.users; let i = index" class="tr-pointer">
       <th scope="row">{{i+1}}</th>
-      <td>{{user.firstname}}</td>
-      <td>{{user.lastname}}</td>
-      <td>{{user.listOfBooksId === null ? 0 : user.listOfBooksId.length }}</td>
+      <td (click)="selectUser(user.id)">{{user.firstname}}</td>
+      <td (click)="selectUser(user.id)">{{user.lastname}}</td>
+      <td (click)="selectUser(user.id)">{{user.listOfBooksId === null ? 0 : user.listOfBooksId.length }}</td>
       <td class="text-center">
         <button (click)="editUser(user.id)" class="btn btn-primary text-center"><span>Edit</span></button>
         <button (click)="deleteUser(user.id)" class="btn btn-danger text-center"><span>Delete</span></button>
@@ -35,12 +48,5 @@
 </table>
   </div>
 </div>
-<ul *ngIf="{users: users | async} as data">
-  <li *ngFor="let user of data.users" >[{{user.id}}] {{user.firstname}} - {{user.lastname}}
-    <button  class="btn btn-sm btn-primary mr-1">Detais</button>
-    <button (click)="editUser(user.id)" class="btn btn-sm btn-primary mr-1">Edit</button>
-    <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user" >delete</button>
-  </li>
-</ul>
-
+  <a routerLink="/books" routerLinkActive="active">Book page</a>
 

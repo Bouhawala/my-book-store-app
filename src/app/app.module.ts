@@ -9,7 +9,6 @@ import { UsersComponent } from './views/users/users.component';
 import { BooksComponent } from './views/books/books.component';
 import { UserComponent } from './views/users/user/user.component';
 import { EditUserComponent } from './views/users/edit-user/edit-user.component';
-import { ClickOutsideDirective } from './directives/click-outside.directive';
 
 @NgModule({
   declarations: [
@@ -17,8 +16,7 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
     UsersComponent,
     BooksComponent,
     UserComponent,
-    EditUserComponent,
-    ClickOutsideDirective
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

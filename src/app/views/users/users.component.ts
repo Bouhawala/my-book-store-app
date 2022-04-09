@@ -35,8 +35,7 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
-
+  
   addNewUser(user: User) {
     this.store.dispatch(saveNewUserAction({user}));
     this.addOneUserForm.reset();
@@ -53,7 +52,10 @@ export class UsersComponent implements OnInit {
   deleteUser(id: number | any) {
     this.store.dispatch(deleteUserEffectAction({id}));
     this.router.navigate(['users']);
+  }
 
+  navigateToUserPage() {
+    this.router.navigateByUrl('books');
   }
 
 }

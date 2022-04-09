@@ -132,19 +132,12 @@
       "id": 29
     },
     {
-      "firstname": "aaaa",
-      "lastname": "aaaaaa",
-      "listOfBooksId": null,
-      "id": 32
-    },
-    {
-      "firstname": "fdfdfd",
-      "lastname": "dfdfdfd",
+      "firstname": "fdfd",
+      "lastname": "fdfd",
       "listOfBooksId": [
-        3,
         4
       ],
-      "id": 34
+      "id": 30
     }
   ]
 }
