@@ -17,7 +17,7 @@ export const selectedBookBySelectedUser = createSelector(booksSelector, selected
   }, []) : []
 )
 
-export const selectedBookTitleBySelectedUser = createSelector(selectedBookBySelectedUser,(books) => books.map(book => book.title));
+export const selectedBookTitleBySelectedUser = createSelector(selectedBookBySelectedUser, books => books.map(book => book.title));
 
 
 

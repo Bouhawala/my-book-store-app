@@ -55,7 +55,7 @@
       "title": "Tender Is the Night",
       "author": "F. Scott Fitzgerald"
     },
-    {     
+    {
       "id": 12,
       "title": "Taming a Sea Horse",
       "author": "Robert B. Parker"
@@ -109,19 +109,19 @@
       "id": 22,
       "title": "The Soldier's Art",
       "author": "Anthony Powell|"
+    },
+    {
+      "title": "zamil",
+      "author": "zamil",
+      "id": 23
+    },
+    {
+      "title": "rdfdfd",
+      "author": "fdfdfdfd",
+      "id": 24
     }
   ],
   "users": [
-    {
-      "firstname": "Mohamed",
-      "lastname": "Bouhawala",
-      "listOfBooksId": [
-        1,
-        2,
-        3
-      ],
-      "id": 1
-    },
     {
       "firstname": "Karim",
       "lastname": "Gharbi",
@@ -154,6 +154,16 @@
         22
       ],
       "id": 5
+    },
+    {
+      "firstname": "Yassine",
+      "lastname": "Khalfaoui",
+      "listOfBooksId": [
+        4,
+        5,
+        7
+      ],
+      "id": 6
     }
   ]
 }
