@@ -21,7 +21,6 @@ export const fetchAllBooksAction = createAction(BookEffectsActionType.FETCH_ALL_
 export const fetchAllBooksSuccessAction = createAction(BookEffectsActionType.FETCH_ALL_BOOKS_SUCCESS, props<{ books: Books }>());
 export const fetchAllBooksFailureAction = createAction(BookEffectsActionType.FETCH_ALL_BOOKS_FAILURE, props<{ code: number, reason: string }>());
 
-
 export  const saveNewBookAction = createAction(BookEffectsActionType.SAVE_NEW_BOOK, props<{book: Book}>());
 export  const saveNewBookSuccessAction = createAction(BookEffectsActionType.SAVE_NEW_BOOK_SUCCESS, props<{book: Book}>());
 export  const saveNewBookFailureAction = createAction(BookEffectsActionType.SAVE_NEW_BOOK_FAILURE, props<{ code: number, reason: string }>());
@@ -48,7 +47,6 @@ export class BookEffects {
     map(action => setAllBookAction({books: action.books}))
   ));
 
-
   fetchAllBooksFailure = createEffect(() => this.actions.pipe(
     ofType(fetchAllBooksFailureAction),
     tap(action => console.warn(action))
@@ -71,13 +69,9 @@ export class BookEffects {
     map(action => addOneBookAction({book: action.book}))
   ));
 
-
   saveNewBookFailureEffect = createEffect(() => this.actions.pipe(
     ofType(saveNewBookFailureAction),
     tap(action => console.warn(action))
   ), {dispatch: false});
-
-
-
 
 }

@@ -1,8 +1,7 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { User } from 'src/app/types/user.type';
 import { provideMockStore } from '@ngrx/store/testing';
-import {UsersComponent} from './users.component';
+import { UsersComponent } from './users.component';
 import { ApiService } from 'src/app/services/api.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -39,7 +38,7 @@ describe('UsersComponent', () => {
                                 {id: 2, firstname: "mohamed", lastname: "bouhawala", books: ["abcd", "efgh"]},
                                 {id: 3, firstname: "mohamed", lastname: "bouhawala", books: ["abcd", "efgh"]});
 
-      expectedUsers$.subscribe((user: User) => {
+      expectedUsers$.subscribe(user => {
         expect(user.firstname).toEqual(expectedUsers[0].firstname);
         done();
       });

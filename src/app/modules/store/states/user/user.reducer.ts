@@ -5,9 +5,7 @@ import {
   setSelectedUserIdAction,
   updateUserAction
 } from './user.action';
-import {User, Users} from 'src/app/types/user.type';
-import {createEntityAdapter, EntityAdapter} from "@ngrx/entity";
-import {Book, Books} from "../../../../types/book.type";
+import {Users} from 'src/app/types/user.type';
 
 export interface UserState {
   entities: Users;
@@ -18,8 +16,6 @@ const initialUserState: UserState = {
   entities: [],
   selectedUserId: null,
 }
-export const adapter: EntityAdapter<User> = createEntityAdapter<User>();
-
 
 export const userReducer = createReducer(
   initialUserState,
@@ -47,9 +43,3 @@ export const userReducer = createReducer(
     return {
       ...state, entities: updatedUsers
     }}))
-
-export  function updateEntitiesUsers(entities: Users,user: User){
-  const elementIndex = entities.findIndex(u => u.id == user.id);
-  entities[elementIndex] = user;
-  return entities;
-}

@@ -4,19 +4,25 @@
   </div>
 </div>
 
-<ng-container *ngIf="{user: user | async, userBooksTitles: userBooksTitles | async} as data">  
+<ng-container *ngIf="{user: user | async} as data">  
   <div class="row justify-content-center">
     <div class="col-5">
-  <div [formGroup]="updateUserForm">
-    <input type="text" formControlName="firstname" placeholder="firstname">
-    <input type="text" formControlName="lastname" placeholder="lastname">
-    <button class="btn btn-primary text-center"  (click)="updateUser(updateUserForm.value,data?.user?.id)" [disabled]="updateUserForm.invalid">UPDATE
-    </button>
-  </div>
-  </div>
+      <div [formGroup]="updateUserForm">
+        <input type="text" formControlName="firstname" placeholder="firstname">
+        <input type="text" formControlName="lastname" placeholder="lastname">
+        <button class="btn btn-primary text-center"
+                (click)="updateUser(updateUserForm.value,data?.user?.id)"
+                [disabled]="updateUserForm.invalid">
+          UPDATE
+        </button>
+        <!--
+        <select multiple formControlName="listOfBooksId">
+          <option *ngFor="let book  of userBooksTitles | async" >
+            {{ book }}
+          </option>
+        </select>
+        -->
+      </div>
+    </div>
   </div>
 </ng-container>
-
-
-
-

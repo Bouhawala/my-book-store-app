@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {fetchAllUsersAction} from "./modules/store/effects/user.effects";
-import {Store} from "@ngrx/store";
-import {fetchAllBooksAction} from "./modules/store/effects/book.effects";
+import { Component, OnInit } from '@angular/core';
+import { fetchAllUsersAction } from "./modules/store/effects/user.effects";
+import { Store } from "@ngrx/store";
+import { fetchAllBooksAction } from "./modules/store/effects/book.effects";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,6 @@ import {fetchAllBooksAction} from "./modules/store/effects/book.effects";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'my-book-store-app';
 
   constructor(private readonly store: Store) {
   }

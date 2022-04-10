@@ -17,33 +17,24 @@ import { setSelectedUserIdAction } from 'src/app/modules/store/states/user/user.
 })
 export class EditUserComponent implements OnInit {
 
-  firstname = "";
-  lastname = "";
-  isDeleting = false;
-  listOfBooksId: string[] = [];
-  selectedIndex: number | string | undefined;
-  _user = this.store.pipe(select(selectedUserSelector));
   user: Observable<User | undefined> = this.store.pipe(select(selectedUserSelector));
-  userBooksTitles: Observable<string[]> = this.store.pipe(
+  /* userBooksTitles: Observable<string[]> = this.store.pipe(
     select(selectedBookTitleBySelectedUser)
-  );
-
+  ); */
 
   updateUserForm: FormGroup = new FormGroup({
     firstname: new FormControl('', [Validators.required]),
     lastname: new FormControl('', [Validators.required]),
-    listOfBooksId: new FormControl([Validators.required])
+    // listOfBooksId: new FormControl([Validators.required])
   });
 
-
   routerIdTriggerSubscription: Subscription | undefined;
-  routerIdTrigger: Observable<any> = this.activatedRoute.params.pipe(tap(params => this.store.dispatch(setSelectedUserIdAction({id: params.id}))));
+  routerIdTrigger: Observable<any> = this.activatedRoute.params.pipe(
+      tap(params => this.store.dispatch(setSelectedUserIdAction({id: params.id}))));
 
   constructor(private readonly activatedRoute: ActivatedRoute,
               private router: Router,
-              private readonly store: Store) {
-    this.selectedIndex = undefined;
-  }
+              private readonly store: Store) { }
 
   ngOnInit(): void {
     this.routerIdTriggerSubscription = this.routerIdTrigger.subscribe();

@@ -31,7 +31,6 @@ export  const saveNewUserAction = createAction(UserEffectsActionType.SAVE_NEW_US
 export  const saveNewUserSuccessAction = createAction(UserEffectsActionType.SAVE_NEW_USER_SUCCESS, props<{user: User}>());
 export  const saveNewUserFailureAction = createAction(UserEffectsActionType.SAVE_NEW_USER_FAILURE, props<{ code: number, reason: string }>());
 
-
 export const  updateUserEffectAction = createAction(UserEffectsActionType.UPDATE_USER,props<{user: User}>());
 export  const updateUserEffectSuccessAction = createAction(UserEffectsActionType.UPDATE_USER_SUCCES, props<{user: User}>());
 export  const updateUserEffectFailureAction = createAction(UserEffectsActionType.UPDATE_USER_FAILURE, props<{ code: number, reason: string }>());
@@ -57,19 +56,15 @@ export class UserEffects {
     )
   );
 
-
-
   fetchAllUserSuccess = createEffect(() => this.actions.pipe(
     ofType(fetchAllUsersSuccessAction),
     map(action => setAllUserAction({users: action.users}))
   ));
 
-
   fetchAllUserFailure = createEffect(() => this.actions.pipe(
     ofType(fetchAllUsersFailureAction),
     tap(action => console.warn(action))
   ), {dispatch: false});
-
 
   saveNewUserEffect = createEffect(() => this.actions.pipe(
       ofType(saveNewUserAction),
@@ -88,12 +83,10 @@ export class UserEffects {
     map(action => addOneUserAction({user: action.user}))
   ));
 
-
   saveNewUserFailureEffect = createEffect(() => this.actions.pipe(
     ofType(saveNewUserFailureAction),
     tap(action => console.warn(action))
   ), {dispatch: false});
-
 
   updateUserEffect = createEffect(() => this.actions.pipe(
       ofType(updateUserEffectAction),
@@ -112,12 +105,10 @@ export class UserEffects {
     map(action => updateUserAction({user: action.user}))
   ));
 
-
   updateUserFailureEffect = createEffect(() => this.actions.pipe(
     ofType(updateUserEffectFailureAction),
     tap(action => console.warn(action))
   ), {dispatch: false});
-
 
   deleteUserEffect = createEffect(() => this.actions.pipe(
       ofType(deleteUserEffectAction),
@@ -136,16 +127,9 @@ export class UserEffects {
     map(action => deleteUserAction({id: action.id}))
   ));
 
-
   deleteUserFailureEffect = createEffect(() => this.actions.pipe(
     ofType(deleteUserEffectFailureAction),
     tap(action => console.warn(action))
   ), {dispatch: false});
-
-
-
-
-
-
 
 }

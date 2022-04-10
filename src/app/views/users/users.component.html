@@ -6,47 +6,62 @@
 
 <div class="row justify-content-center">
   <div class="col-9">
-<div [formGroup]="addOneUserForm">
-  <input type="text" formControlName="firstname" placeholder="firstname">
-  <input type="text" formControlName="lastname" placeholder="lastname">
-  <select multiple formControlName="listOfBooksId">
-    <option *ngFor="let book  of books | async" [value]="book.id" >
-      {{ book.title }}
-    </option>
-  </select>
-  <button style="margin-bottom: 20px;" class="btn btn-primary text-center" (click)="addNewUser(addOneUserForm.value)" [disabled]="addOneUserForm.invalid">
-  <span>Submit</span>
-  </button>
-</div>
-</div>
+    <div [formGroup]="addOneUserForm">
+      <input type="text" formControlName="firstname" placeholder="firstname">
+      <input type="text" formControlName="lastname" placeholder="lastname">
+      <select multiple formControlName="listOfBooksId">
+        <option *ngFor="let book  of books | async" [value]="book.id" >
+          {{ book.title }}
+        </option>
+      </select>
+      <button style="margin-bottom: 20px;"
+              class="btn btn-primary text-center"
+              (click)="addNewUser(addOneUserForm.value)"
+              [disabled]="addOneUserForm.invalid">
+        <span>
+          Submit
+        </span>
+      </button>
+    </div>
+  </div>
 </div>
 
 <div class="row justify-content-center">
   <div class="col-9">
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Firstname</th>
-      <th scope="col">Lastname</th>
-      <th scope="col">Number of books</th>
-      <th scope="col" class="text-center">Actions</th>
-    </tr>
-  </thead>
-  <tbody *ngIf="{users: users | async} as data">
-    <tr *ngFor="let user of data.users; let i = index" class="tr-pointer">
-      <th scope="row">{{i+1}}</th>
-      <td (click)="selectUser(user.id)">{{user.firstname}}</td>
-      <td (click)="selectUser(user.id)">{{user.lastname}}</td>
-      <td (click)="selectUser(user.id)">{{user.listOfBooksId === null ? 0 : user.listOfBooksId.length }}</td>
-      <td class="text-center">
-        <button (click)="editUser(user.id)" class="btn btn-primary text-center"><span>Edit</span></button>
-        <button (click)="deleteUser(user.id)" class="btn btn-danger text-center"><span>Delete</span></button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Firstname</th>
+          <th scope="col">Lastname</th>
+          <th scope="col">Number of books</th>
+          <th scope="col" class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="{users: users | async} as data">
+        <tr *ngFor="let user of data.users; let i = index" class="tr-pointer">
+          <th scope="row">{{i+1}}</th>
+          <td (click)="selectUser(user.id)">{{user.firstname}}</td>
+          <td (click)="selectUser(user.id)">{{user.lastname}}</td>
+          <td (click)="selectUser(user.id)">{{user.listOfBooksId === null ? 0 : user.listOfBooksId.length }}</td>
+          <td class="text-center">
+            <button (click)="editUser(user.id)"
+                    class="btn btn-primary text-center">
+              <span>
+                Edit
+              </span>
+            </button>
+            <button (click)="deleteUser(user.id)"
+                    class="btn btn-danger text-center">
+              <span>
+                Delete
+              </span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
-  <a routerLink="/books" routerLinkActive="active">Book page</a>
 
+<a routerLink="/books" routerLinkActive="active">Book page</a>

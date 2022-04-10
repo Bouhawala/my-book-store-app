@@ -12,9 +12,8 @@ export const selectedBookTitle = createSelector(booksSelector, selectedBookIdSel
 export const selectedBookBySelectedUser = createSelector(booksSelector, selectedUserSelector,
   (books, user) => user?.listOfBooksId ? user.listOfBooksId.reduce((acc: Books, bookId) => {
     const book = books.find(book => book.id === bookId);
-    book && acc.push(book);
+    book ? acc.push(book) : book && acc.push(book);
     return acc;
-
   }, []) : []
 )
 

@@ -6,35 +6,44 @@
 
 <div class="row justify-content-center">
   <div class="col-5 justify-content-center">
-<div [formGroup]="addOneBookForm">
-  <input type="text" formControlName="title" placeholder="title">
-  <input type="text" formControlName="auhor" placeholder="author">
-  <button (click)="addNewBook(addOneBookForm.value)"
-  [disabled]="addOneBookForm.invalid"
-  style="margin-bottom: 20px;"
-  class="btn btn-primary text-center"><span>Submit</span></button>  
-</div>
-</div>
+    <div [formGroup]="addOneBookForm">
+      <input type="text" formControlName="title" placeholder="title">
+      <input type="text" formControlName="author" placeholder="author">
+      <button (click)="addNewBook(addOneBookForm.value)"
+              [disabled]="addOneBookForm.invalid"
+              style="margin-bottom: 20px;"
+              class="btn btn-primary text-center">
+                <span>
+                  Submit
+                </span>
+      </button>  
+    </div>
+  </div>
 </div>
 
 <div class="row justify-content-center">
   <div class="col-9">
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Title</th>
-      <th scope="col">Author</th>
-    </tr>
-  </thead>
-  <tbody *ngIf="{books: books | async} as data">
-    <tr *ngFor="let book of data.books; let i = index" class="tr-pointer">
-      <th scope="row">{{i+1}}</th>
-      <td>{{book.title}}</td>
-      <td>{{book.author}}</td>
-    </tr>
-  </tbody>
-</table>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="{books: books | async} as data">
+        <tr *ngFor="let book of data.books; let i = index" class="tr-pointer">
+          <th scope="row">{{i+1}}</th>
+          <td>{{book.title}}</td>
+          <td>{{book.author}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
-<button style="margin-left: 200px;"  class="btn btn-primary text-center" (click)="navigateToUserPage()">user page</button>
+
+<button style="margin-left: 200px; margin-bottom: 20px;"
+        class="btn btn-primary text-center"
+        (click)="navigateToUserPage()">
+  user page
+</button>

@@ -1,7 +1,6 @@
 import {createAction, props} from '@ngrx/store';
 import {User, Users} from '../../../../types/user.type';
 
-
 export enum UserActionType {
   ADD_ONE_USER = '[USER] Add one user',
   SET_ALL_USER = '[USER] Set all users',
@@ -17,6 +16,3 @@ export const setAllUserAction = createAction(UserActionType.SET_ALL_USER, props<
 export const setSelectedUserIdAction = createAction(UserActionType.SET_ONE_USER_ID, props<{id: number}>());
 export const setSelectedUserAction = createAction(UserActionType.SET_ONE_USER, props<{id: number}>());
 export const deleteUserAction = createAction(UserActionType.DELETE_USER, props<{id: number}>());
-
-
-
