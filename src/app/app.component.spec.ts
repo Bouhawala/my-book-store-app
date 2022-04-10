@@ -22,10 +22,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', () => {
+
+  it(`should have as title 'my-book-store-app'`, () => {  //5
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('my-book-store-app app is running!');
+    const app = fixture.debugElement.componentInstance;
+    expect(app.title).toEqual('my-book-store-app');
   });
 });

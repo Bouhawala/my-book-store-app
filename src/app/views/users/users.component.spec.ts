@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { of } from 'rxjs';
 import { provideMockStore } from '@ngrx/store/testing';
 import { UsersComponent } from './users.component';
 import { ApiService } from 'src/app/services/api.service';
@@ -30,17 +29,4 @@ describe('UsersComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('testing users', done => {
-      const expectedUsers = [{id: 1, firstname: "mohamed", lastname: "bouhawala", books: ["abcd", "efgh"]},
-                             {id: 2, firstname: "mohamed", lastname: "bouhawala", books: ["abcd", "efgh"]},
-                             {id: 3, firstname: "mohamed", lastname: "bouhawala", books: ["abcd", "efgh"]}];
-      const expectedUsers$ = of({id: 1, firstname: "mohamed", lastname: "bouhawala", books: ["abcd", "efgh"]},
-                                {id: 2, firstname: "mohamed", lastname: "bouhawala", books: ["abcd", "efgh"]},
-                                {id: 3, firstname: "mohamed", lastname: "bouhawala", books: ["abcd", "efgh"]});
-
-      expectedUsers$.subscribe(user => {
-        expect(user.firstname).toEqual(expectedUsers[0].firstname);
-        done();
-      });
-    })
 });

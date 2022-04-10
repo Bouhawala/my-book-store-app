@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {Observable, Subscription} from "rxjs";
-import {tap} from "rxjs/operators";
-import {ActivatedRoute, Router} from "@angular/router";
-import {select, Store} from "@ngrx/store";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { Observable, Subscription } from "rxjs";
+import { tap } from "rxjs/operators";
+import { ActivatedRoute, Router } from "@angular/router";
+import { select, Store } from "@ngrx/store";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { selectedUserSelector } from 'src/app/modules/store/states/user/user.selector';
 import { User } from 'src/app/types/user.type';
 import { selectedBookTitleBySelectedUser } from 'src/app/modules/store/states/book/book.selector';
