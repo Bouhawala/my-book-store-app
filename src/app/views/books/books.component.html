@@ -1,18 +1,18 @@
 <div class="row">
   <div class="col-12">
-    <h1 class="text-center">My Book Store Application</h1>
+    <h1 class="text-center text-primary">My Book Store Application</h1>
   </div>
 </div>
 
 <div class="row justify-content-center">
   <div class="col-5 justify-content-center">
-    <div [formGroup]="addOneBookForm">
+    <div [formGroup]="addOneBookForm" style="margin-left: 32px;">
       <input type="text" formControlName="title" placeholder="title">
       <input type="text" formControlName="author" placeholder="author">
       <button (click)="addNewBook(addOneBookForm.value)"
               [disabled]="addOneBookForm.invalid"
-              style="margin-bottom: 20px;"
-              class="btn btn-primary text-center">
+              style="margin-bottom: 6px;"
+              class="btn btn-primary btn-sm text-center">
                 <span>
                   Submit
                 </span>
