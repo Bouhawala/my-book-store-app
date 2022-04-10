@@ -104,6 +104,11 @@
       "title": "fdfdfd",
       "author": "fdfd",
       "id": 21
+    },
+    {
+      "title": "dsds",
+      "author": "sdds",
+      "id": 22
     }
   ],
   "users": [
@@ -133,23 +138,18 @@
       "id": 29
     },
     {
-      "firstname": "asma",
-      "lastname": "gasmi",
-      "listOfBooksId": [
-        1,
-        2,
-        3,
-        4
-      ],
-      "id": 32
-    },
-    {
       "firstname": "bouha",
       "lastname": "mohamed",
       "listOfBooksId": [
         4
       ],
       "id": 34
+    },
+    {
+      "firstname": "sdds",
+      "lastname": "ddd",
+      "listOfBooksId": null,
+      "id": 35
     }
   ]
 }

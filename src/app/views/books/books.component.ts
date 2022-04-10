@@ -24,9 +24,7 @@ export class BooksComponent implements OnInit {
   constructor(private readonly store: Store,
               private router:Router) { }
 
-  ngOnInit(): void {
-    this.store.dispatch(fetchAllBooksAction());
-  }
+  ngOnInit(): void {  }
 
   addNewBook(book: Book) {
     this.store.dispatch(saveNewBookAction({book}));
@@ -35,6 +33,10 @@ export class BooksComponent implements OnInit {
 
   navigateToUserPage() {
     this.router.navigateByUrl('users');
+  }
+
+  trackByBook(index: number, book: Book): number | string {
+    return book.id;
   }
 
 }

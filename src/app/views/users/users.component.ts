@@ -6,7 +6,7 @@ import { Router } from "@angular/router";
 import { User, Users } from 'src/app/types/user.type';
 import { usersSelector } from 'src/app/modules/store/states/user/user.selector';
 import { booksSelector } from 'src/app/modules/store/states/book/book.selector';
-import { Books } from 'src/app/types/book.type';
+import { Book, Books } from 'src/app/types/book.type';
 import { deleteUserEffectAction, saveNewUserAction } from 'src/app/modules/store/effects/user.effects';
 
 @Component({
@@ -52,6 +52,14 @@ export class UsersComponent implements OnInit {
 
   navigateToUserPage() {
     this.router.navigateByUrl('books');
+  }
+
+  trackByBook(index: number, book: Book): number | string {
+    return book.id;
+  }
+
+  trackByUser(index: number, user: User): number | string {
+    return user.id;
   }
 
 }
