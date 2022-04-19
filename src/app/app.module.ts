@@ -9,6 +9,8 @@ import { UsersComponent } from './views/users/users.component';
 import { BooksComponent } from './views/books/books.component';
 import { UserComponent } from './views/users/user/user.component';
 import { EditUserComponent } from './views/users/edit-user/edit-user.component';
+import { HeaderComponent } from './views/header/header.component';
+import { DropdownDirective } from './directives/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { EditUserComponent } from './views/users/edit-user/edit-user.component';
     UsersComponent,
     BooksComponent,
     UserComponent,
-    EditUserComponent
+    EditUserComponent,
+    HeaderComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,30 @@
-<div class="row">
-    <div class="col-12">
-      <h1 class="text-center text-primary">My Book Store Application</h1>
-    </div>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand text-primary" href="#">My Book Store Application</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li #booksLink="routerLinkActive"
+      routerLinkActive="active"
+      class="nav-item">
+        <a class="nav-link" [routerLink]="['/', routesPaths.BOOKS]">Books</a>
+      </li>
+      <li #usersLink="routerLinkActive"
+      routerLinkActive="active"
+      class="nav-item">
+        <a class="nav-link" [routerLink]="['/', routesPaths.USERS]">Users</a>
+      </li>
+      <li class="nav-item dropdown" appDropdown #r="appDropDown">
+        <a class="nav-link dropdown-toggle" style="cursor: pointer;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" [ngClass]="{'show':r.isOpen}" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" style="cursor: pointer;">Test</a>
+          <a class="dropdown-item" style="cursor: pointer;">Another Test</a>
+          <a class="dropdown-item" style="cursor: pointer;">Some other Test here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
