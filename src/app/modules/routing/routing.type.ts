@@ -1,5 +1,5 @@
 export enum RoutesPaths {
-    HOME = '',
+    USER = 'user',
     USERS = 'users',
     BOOKS = 'books',
   }

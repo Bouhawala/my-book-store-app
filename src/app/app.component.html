@@ -1,5 +1,3 @@
-<app-header></app-header>
-
 <div>
     <div *ngIf="loggedIn$ | async as loggedIn; else loginContent">
       <p>
@@ -13,8 +11,10 @@
     </div>
   
     <ng-template #loginContent
-      ><button (click)="login()">Login</button></ng-template
+      ><button style="display: none;" (click)="login()">Login</button></ng-template
     >
   </div>
+
+<app-header></app-header>
   
 <router-outlet></router-outlet>

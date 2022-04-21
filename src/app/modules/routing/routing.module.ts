@@ -4,28 +4,35 @@ import { BooksComponent } from 'src/app/views/books/books.component';
 import { EditUserComponent } from 'src/app/views/users/edit-user/edit-user.component';
 import { UserComponent } from 'src/app/views/users/user/user.component';
 import { UsersComponent } from 'src/app/views/users/users.component';
+import {AuthGuard} from '@auth0/auth0-angular';
+import { RoutesPaths } from './routing.type';
+import { AppComponent } from 'src/app/app.component';
 
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'users'
+    component: UsersComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: 'books',
-    component: BooksComponent
+    path: RoutesPaths.BOOKS,
+    component: BooksComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: 'users',
-    component: UsersComponent
+    path: RoutesPaths.USERS,
+    component: UsersComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: 'user/:id',
-    component: UserComponent
+    path: `${RoutesPaths.USER}/:id`,
+    component: UserComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: 'edit/:id',
-    component: EditUserComponent
+    path: `${RoutesPaths.USER}/edit/:id`,
+    component: EditUserComponent,
+    canActivate: [AuthGuard]
   },
 ];
 
