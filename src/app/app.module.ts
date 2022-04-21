@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgrxStoreModule } from './modules/store/store.module';
 import { RoutingModule } from './modules/routing/routing.module';
@@ -11,6 +11,9 @@ import { UserComponent } from './views/users/user/user.component';
 import { EditUserComponent } from './views/users/edit-user/edit-user.component';
 import { HeaderComponent } from './views/header/header.component';
 import { DropdownDirective } from './directives/dropdown.directive';
+import { AuthComponent } from './views/auth/auth.component';
+import { MustMatchDirective } from './views/auth/must-match.directive';
+import { AuthInterceptor, authInterceptorProviders } from './auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { DropdownDirective } from './directives/dropdown.directive';
     UserComponent,
     EditUserComponent,
     HeaderComponent,
-    DropdownDirective
+    DropdownDirective,
+    AuthComponent,
+    MustMatchDirective
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,7 @@ import { DropdownDirective } from './directives/dropdown.directive';
     ReactiveFormsModule,
     NgrxStoreModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 
