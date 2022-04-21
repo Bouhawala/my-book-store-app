@@ -6,8 +6,11 @@ import { bookReducer } from './states/book/book.reducer';
 import { BookEffects } from './effects/book.effects';
 import { UserEffects } from './effects/user.effects';
 import { userReducer } from './states/user/user.reducer';
+import { authReducer } from './states/auth/auth.reducer';
+import { AuthEffects } from './effects/auth.effects';
 
 export enum StoreEntity {
+  AUTH = 'auth',
   BOOK = 'book',
   USER = 'user'
 }
@@ -16,10 +19,12 @@ export enum StoreEntity {
   declarations: [],
   imports: [
     StoreModule.forRoot({
+      [StoreEntity.AUTH]: authReducer,
       [StoreEntity.BOOK]: bookReducer,
       [StoreEntity.USER]: userReducer
     }),
     EffectsModule.forRoot([
+      AuthEffects,
       BookEffects,
       UserEffects
     ]),

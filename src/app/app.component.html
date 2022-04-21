@@ -1,2 +1,20 @@
 <app-header></app-header>
+
+<div>
+    <div *ngIf="loggedIn$ | async as loggedIn; else loginContent">
+      <p>
+        <button (click)="logout()">Logout</button>
+        is logged in {{ loggedIn }}
+      </p>
+      <div *ngIf="profile$ | async as profile">
+        <img [src]="profile.picture" />
+        <pre>{{ profile | json }}</pre>
+      </div>
+    </div>
+  
+    <ng-template #loginContent
+      ><button (click)="login()">Login</button></ng-template
+    >
+  </div>
+  
 <router-outlet></router-outlet>

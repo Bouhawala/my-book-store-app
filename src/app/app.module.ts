@@ -11,9 +11,7 @@ import { UserComponent } from './views/users/user/user.component';
 import { EditUserComponent } from './views/users/edit-user/edit-user.component';
 import { HeaderComponent } from './views/header/header.component';
 import { DropdownDirective } from './directives/dropdown.directive';
-import { AuthComponent } from './views/auth/auth.component';
-import { MustMatchDirective } from './views/auth/must-match.directive';
-import { AuthInterceptor, authInterceptorProviders } from './auth.interceptor';
+import { AuthModule } from '@auth0/auth0-angular';
 
 @NgModule({
   declarations: [
@@ -23,9 +21,7 @@ import { AuthInterceptor, authInterceptorProviders } from './auth.interceptor';
     UserComponent,
     EditUserComponent,
     HeaderComponent,
-    DropdownDirective,
-    AuthComponent,
-    MustMatchDirective
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
@@ -33,9 +29,14 @@ import { AuthInterceptor, authInterceptorProviders } from './auth.interceptor';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgrxStoreModule
+    NgrxStoreModule,
+    AuthModule.forRoot({
+      domain: 'dev-uylded-v.us.auth0.com',
+      clientId: 'Fyl64Ko9eWxHQpkbpY3ZqrN824Jr5Zi9',
+      redirectUri: window.location.origin,
+    })
   ],
-  providers: [authInterceptorProviders, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 
