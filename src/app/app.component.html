@@ -1,3 +1,5 @@
+<ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+
 <div>
     <div *ngIf="loggedIn$ | async as loggedIn; else loginContent">
       <p>
@@ -11,7 +13,7 @@
     </div>
   
     <ng-template #loginContent
-      ><button style="display: none;" (click)="login()">Login</button></ng-template
+      ><button (click)="login()">Login</button></ng-template
     >
   </div>
 

@@ -5,6 +5,8 @@ import { fetchAllBooksAction } from "./modules/store/effects/book.effects";
 import { Observable } from 'rxjs';
 import { selectCurrentUserProfile, selectIsLoggedIn } from './modules/store/states/auth/auth.selector';
 import { checkAuthAction, loginAction, logoutAction } from './modules/store/states/auth/auth.action';
+import { AnimationOptions } from 'ngx-lottie';
+import { AnimationItem } from 'lottie-web';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +18,14 @@ export class AppComponent implements OnInit{
 
   loggedIn$: Observable<boolean> = this.store.pipe(select(selectIsLoggedIn));
   profile$: Observable<any> = this.store.pipe(select(selectCurrentUserProfile));
+
+  options: AnimationOptions = {
+    path: '/assets/animation.json',
+  };
+
+  animationCreated(animationItem: AnimationItem): void {
+    console.log(animationItem);
+  }
 
   constructor(private readonly store: Store) {
   }
