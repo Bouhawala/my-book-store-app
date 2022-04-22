@@ -12,8 +12,7 @@ import { EditUserComponent } from './views/users/edit-user/edit-user.component';
 import { HeaderComponent } from './views/header/header.component';
 import { DropdownDirective } from './directives/dropdown.directive';
 import { AuthModule } from '@auth0/auth0-angular';
-import { LottieModule } from 'ngx-lottie';
-import player from 'lottie-web';
+import { LottieCacheModule, LottieModule } from 'ngx-lottie';
 
 @NgModule({
   declarations: [
@@ -37,7 +36,8 @@ import player from 'lottie-web';
       clientId: 'Fyl64Ko9eWxHQpkbpY3ZqrN824Jr5Zi9',
       redirectUri: window.location.origin,
     }),
-    LottieModule.forRoot({ player: playerFactory })
+    LottieModule.forRoot({ player: playerFactory }),
+    LottieCacheModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -48,5 +48,5 @@ export class AppModule { }
 // Note we need a separate function as it's required
 // by the AOT compiler.
 export function playerFactory() {
-  return player;
+  return import(/* webpackChunkName: 'lottie-web' */ 'lottie-web');
 }

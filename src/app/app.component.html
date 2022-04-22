@@ -1,7 +1,14 @@
-<ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+<ng-lottie *ngIf="!(loggedIn$ | async)"
+           [options]="options"
+           width="500px"
+           height="600px"
+           containerClass="moving-box"
+           [styles]="styles"
+           (animationCreated)="animationCreated($event)"
+           (loopComplete)="onLoopComplete()"></ng-lottie>
 
 <div>
-    <div *ngIf="loggedIn$ | async as loggedIn; else loginContent">
+    <div *ngIf="loggedIn$ | async as loggedIn">
       <p>
         <button (click)="logout()">Logout</button>
         is logged in {{ loggedIn }}
@@ -11,12 +18,8 @@
         <pre>{{ profile | json }}</pre>
       </div>
     </div>
-  
-    <ng-template #loginContent
-      ><button (click)="login()">Login</button></ng-template
-    >
   </div>
 
-<app-header></app-header>
+<app-header *ngIf="loggedIn$ | async"></app-header>
   
 <router-outlet></router-outlet>
