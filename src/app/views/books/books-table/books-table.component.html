@@ -13,7 +13,7 @@
           <tr *ngFor="let book of books; trackBy:trackByBook; let i = index" class="tr-pointer">
             <th scope="row">{{i+1}}</th>
             <td (click)="selectBook(book.id)">{{book.title}}</td>
-            <td (click)="selectBook(book.id)"> <div *ngFor="let author of book.authors">{{author | json}}</div></td>
+            <td (click)="selectBook(book.id)"> <div *ngFor="let author of book.authors">{{getAuthorName(author)}}</div></td>
             <td class="text-center">
               <button (click)="editBook(book.id)"
                       class="btn btn-primary text-center">

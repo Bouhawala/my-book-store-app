@@ -36,4 +36,8 @@ export class BooksTableComponent implements OnInit {
     return book.id;
   }
 
+  getAuthorName(authorName: any): string {
+    return authorName.author;
+  }
+
 }
