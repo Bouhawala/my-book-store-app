@@ -1,29 +1,41 @@
 <ng-container *ngIf="{book: book | async} as data">  
     <div class="row justify-content-center">
-      <div class="col-5">
-        <div [formGroup]="updateBookForm">
-          <input type="text" formControlName="title" placeholder="firstname">
-          <table class="table table-bordered" formArrayName="authors">
-            <tr>
-              <th colspan="2">Add Multiple Author:</th>
-              <th width="150px"><button type="button" (click)="addAuthor()" class="btn btn-primary">Add More</button></th>
-            </tr>
-            <tr *ngFor="let author of authors().controls; let i=index" [formGroupName]="i">
-              <td>
-                  Author :
-                  <input type="text" formControlName="author" class="form-control">
-              </td>
-              <td>
-                  <button (click)="removeAuthor(i)" class="btn btn-danger">Remove</button>
-              </td>
-            </tr>
-          </table>          <button class="btn btn-primary text-center"
-                  (click)="updateBook(updateBookForm.value,data?.book?.id)"
-                  [disabled]="updateBookForm.invalid">
-            UPDATE
-          </button>
+      <div class="col-6" style="margin-top: 2rem;">
+        <div [formGroup]="updateBookForm" style="display: inline-flex;">
+            <table class="table-bordered">
+              <tr>
+                <th>Edit Title:</th>
+              </tr>
+              <tr>
+                <td>
+                    Title:
+                    <input type="text" formControlName="title">
+                </td>
+              </tr>
+            </table>
+            <table class="table-bordered" formArrayName="authors">
+              <tr>
+                <th>Edit Author:</th>
+                <th><button type="button" (click)="addAuthor()" class="btn btn-primary">Add</button></th>
+              </tr>
+              <tr *ngFor="let author of authors().controls; let i=index" [formGroupName]="i">
+                <td>
+                    Author:
+                    <input type="text" formControlName="author">
+                </td>
+                <td>
+                    <button (click)="removeAuthor(i)" class="btn btn-danger">Remove</button>
+                </td>
+              </tr>
+            </table> 
+          </div>     
+          <button class="btn btn-primary text-center"
+          (click)="updateBook(updateBookForm.value,data?.book?.id)"
+          style="margin-top: 18px;"
+          [disabled]="updateBookForm.invalid">
+          UPDATE
+          </button>    
         </div>
       </div>
-    </div>
   </ng-container>
   
