@@ -36,14 +36,29 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Title</th>
-          <th scope="col">Author</th>
+          <th scope="col">Authors</th>
+          <th scope="col" class="text-center">Actions</th>
         </tr>
       </thead>
       <tbody *ngIf="{books: books | async} as data">
         <tr *ngFor="let book of data.books; trackBy:trackByBook; let i = index" class="tr-pointer">
           <th scope="row">{{i+1}}</th>
-          <td>{{book.title}}</td>
-          <td>{{book.authors | json}}</td>
+          <td (click)="selectBook(book.id)">{{book.title}}</td>
+          <td (click)="selectBook(book.id)"> <div *ngFor="let author of book.authors">{{author | json}}</div></td>
+          <td class="text-center">
+            <button (click)="editBook(book.id)"
+                    class="btn btn-primary text-center">
+              <span>
+                Edit
+              </span>
+            </button>
+            <button (click)="deleteBook(book.id)"
+                    class="btn btn-danger text-center">
+              <span>
+                Delete
+              </span>
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>

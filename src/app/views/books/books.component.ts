@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { Book, Books } from 'src/app/types/book.type';
 import { booksSelector } from 'src/app/modules/store/states/book/book.selector';
-import { fetchAllBooksAction, saveNewBookAction } from 'src/app/modules/store/effects/book.effects';
+import { deleteBookEffectAction, saveNewBookAction } from 'src/app/modules/store/effects/book.effects';
 
 @Component({
   selector: 'app-books',
@@ -31,7 +31,7 @@ export class BooksComponent implements OnInit {
               private formBuilder: FormBuilder) { 
     
     this.addOneBookForm = this.formBuilder.group({
-      title: '',
+      title: ['', Validators.required],
       authors: this.formBuilder.array([])
     });
   }
@@ -42,7 +42,7 @@ export class BooksComponent implements OnInit {
 
   newAuthor(): FormGroup {
     return this.formBuilder.group({
-      author: ''
+      author: ['', Validators.required]
     })
   }
 
@@ -61,8 +61,17 @@ export class BooksComponent implements OnInit {
     this.addOneBookForm.reset();
   }
 
-  navigateToUserPage() {
-    this.router.navigateByUrl('users');
+  selectBook(id: number | string) {
+    this.router.navigate(['book', id]);
+  }
+
+  editBook(id: number | any) {
+    this.router.navigate(['book/edit', id]);
+  }
+
+  deleteBook(id: number | any) {
+    this.store.dispatch(deleteBookEffectAction({id}));
+    this.router.navigate(['books']);
   }
 
   trackByBook(index: number, book: Book): number | string {
