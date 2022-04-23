@@ -13,6 +13,7 @@ import { HeaderComponent } from './views/header/header.component';
 import { DropdownDirective } from './directives/dropdown.directive';
 import { AuthModule } from '@auth0/auth0-angular';
 import { LottieCacheModule, LottieModule } from 'ngx-lottie';
+import { ProfileComponent } from './views/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LottieCacheModule, LottieModule } from 'ngx-lottie';
     UserComponent,
     EditUserComponent,
     HeaderComponent,
-    DropdownDirective
+    DropdownDirective,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

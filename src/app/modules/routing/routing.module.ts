@@ -7,6 +7,7 @@ import { UsersComponent } from 'src/app/views/users/users.component';
 import {AuthGuard} from '@auth0/auth0-angular';
 import { RoutesPaths } from './routing.type';
 import { AppComponent } from 'src/app/app.component';
+import { ProfileComponent } from 'src/app/views/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,11 @@ const routes: Routes = [
   {
     path: RoutesPaths.USERS,
     component: UsersComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: RoutesPaths.PROFILE,
+    component: ProfileComponent,
     canActivate: [AuthGuard]
   },
   {

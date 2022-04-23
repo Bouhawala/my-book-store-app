@@ -7,18 +7,6 @@
            (animationCreated)="animationCreated($event)"
            (loopComplete)="onLoopComplete()"></ng-lottie>
 
-<div>
-    <div *ngIf="loggedIn$ | async as loggedIn">
-      <p>
-        <button (click)="logout()">Logout</button>
-        is logged in {{ loggedIn }}
-      </p>
-      <div *ngIf="profile$ | async as profile">
-        <img [src]="profile.picture" />
-        <pre>{{ profile | json }}</pre>
-      </div>
-    </div>
-  </div>
 
 <app-header *ngIf="loggedIn$ | async"></app-header>
   
