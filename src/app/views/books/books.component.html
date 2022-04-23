@@ -2,7 +2,21 @@
   <div class="col-5 justify-content-center">
     <div [formGroup]="addOneBookForm" style="margin-left: 32px;">
       <input type="text" formControlName="title" placeholder="title">
-      <input type="text" formControlName="author" placeholder="author">
+      <table class="table table-bordered" formArrayName="authors">
+        <tr>
+          <th colspan="2">Add Multiple Author:</th>
+          <th width="150px"><button type="button" (click)="addAuthor()" class="btn btn-primary">Add More</button></th>
+        </tr>
+        <tr *ngFor="let author of authors().controls; let i=index" [formGroupName]="i">
+          <td>
+              Author :
+              <input type="text" formControlName="author" class="form-control">
+          </td>
+          <td>
+              <button (click)="removeAuthor(i)" class="btn btn-danger">Remove</button>
+          </td>
+        </tr>
+      </table>
       <button (click)="addNewBook(addOneBookForm.value)"
               [disabled]="addOneBookForm.invalid"
               style="margin-bottom: 6px;"
@@ -29,7 +43,7 @@
         <tr *ngFor="let book of data.books; trackBy:trackByBook; let i = index" class="tr-pointer">
           <th scope="row">{{i+1}}</th>
           <td>{{book.title}}</td>
-          <td>{{book.author}}</td>
+          <td>{{book.authors | json}}</td>
         </tr>
       </tbody>
     </table>

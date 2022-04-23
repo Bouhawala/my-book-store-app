@@ -39,7 +39,8 @@ import { ProfileComponent } from './views/profile/profile.component';
       redirectUri: window.location.origin,
     }),
     LottieModule.forRoot({ player: playerFactory }),
-    LottieCacheModule.forRoot()
+    LottieCacheModule.forRoot(),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { Book, Books } from 'src/app/types/book.type';
@@ -14,15 +14,45 @@ import { fetchAllBooksAction, saveNewBookAction } from 'src/app/modules/store/ef
 })
 export class BooksComponent implements OnInit {
 
-  addOneBookForm: FormGroup = new FormGroup({
+  
+
+  addOneBookForm: FormGroup; 
+
+ /* = new FormGroup({
     title: new FormControl('', [Validators.required]),
     author: new FormControl('', [Validators.required])
   });
+  */
 
   books: Observable<Books> = this.store.pipe(select(booksSelector));
 
   constructor(private readonly store: Store,
-              private router:Router) { }
+              private router:Router,
+              private formBuilder: FormBuilder) { 
+    
+    this.addOneBookForm = this.formBuilder.group({
+      title: '',
+      authors: this.formBuilder.array([])
+    });
+  }
+
+  authors() : FormArray {
+    return this.addOneBookForm.get("authors") as FormArray
+  }
+
+  newAuthor(): FormGroup {
+    return this.formBuilder.group({
+      author: ''
+    })
+  }
+
+  addAuthor() {
+    this.authors().push(this.newAuthor());
+  }
+
+  removeAuthor(i: number) {
+    this.authors().removeAt(i);
+  }
 
   ngOnInit(): void {  }
 
