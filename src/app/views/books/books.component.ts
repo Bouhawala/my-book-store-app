@@ -61,21 +61,4 @@ export class BooksComponent implements OnInit {
     this.addOneBookForm.reset();
   }
 
-  selectBook(id: number | string) {
-    this.router.navigate(['book', id]);
-  }
-
-  editBook(id: number | any) {
-    this.router.navigate(['book/edit', id]);
-  }
-
-  deleteBook(id: number | any) {
-    this.store.dispatch(deleteBookEffectAction({id}));
-    this.router.navigate(['books']);
-  }
-
-  trackByBook(index: number, book: Book): number | string {
-    return book.id;
-  }
-
 }

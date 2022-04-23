@@ -17,8 +17,16 @@ export class ApiService {
     return this.httpClient.get<Books>(`${environment.apiUrl}/books`);
   }
 
-  addOneBook(book: Book): Observable<Book> {
+  addBook(book: Book): Observable<Book> {
     return this.httpClient.post<Book>(`${environment.apiUrl}/books`, book);
+  }
+
+  updateBook(book: Book): Observable<Book> {
+    return this.httpClient.put<Book>(`${environment.apiUrl}/books/`+book?.id,book);
+  }
+
+  removeBook(id: number): Observable<Book> {
+    return this.httpClient.delete<any>(`${environment.apiUrl}/books/`+id);
   }
 
   getUsers(): Observable<Users> {
@@ -32,6 +40,7 @@ export class ApiService {
   updateUser(user: User): Observable<User> {
     return this.httpClient.put<User>(`${environment.apiUrl}/users/`+user?.id,user);
   }
+
   removeUser(id: number): Observable<User> {
     return this.httpClient.delete<any>(`${environment.apiUrl}/users/`+id);
   }

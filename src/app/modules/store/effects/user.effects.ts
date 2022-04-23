@@ -27,17 +27,17 @@ export const fetchAllUsersAction = createAction(UserEffectsActionType.FETCH_ALL_
 export const fetchAllUsersSuccessAction = createAction(UserEffectsActionType.FETCH_ALL_USER_SUCCESS, props<{ users: Users }>());
 export const fetchAllUsersFailureAction = createAction(UserEffectsActionType.FETCH_ALL_USER_FAILURE, props<{ code: number, reason: string }>());
 
-export  const saveNewUserAction = createAction(UserEffectsActionType.SAVE_NEW_USER, props<{user: User}>());
-export  const saveNewUserSuccessAction = createAction(UserEffectsActionType.SAVE_NEW_USER_SUCCESS, props<{user: User}>());
-export  const saveNewUserFailureAction = createAction(UserEffectsActionType.SAVE_NEW_USER_FAILURE, props<{ code: number, reason: string }>());
+export const saveNewUserAction = createAction(UserEffectsActionType.SAVE_NEW_USER, props<{user: User}>());
+export const saveNewUserSuccessAction = createAction(UserEffectsActionType.SAVE_NEW_USER_SUCCESS, props<{user: User}>());
+export const saveNewUserFailureAction = createAction(UserEffectsActionType.SAVE_NEW_USER_FAILURE, props<{ code: number, reason: string }>());
 
 export const  updateUserEffectAction = createAction(UserEffectsActionType.UPDATE_USER,props<{user: User}>());
-export  const updateUserEffectSuccessAction = createAction(UserEffectsActionType.UPDATE_USER_SUCCES, props<{user: User}>());
-export  const updateUserEffectFailureAction = createAction(UserEffectsActionType.UPDATE_USER_FAILURE, props<{ code: number, reason: string }>());
+export const updateUserEffectSuccessAction = createAction(UserEffectsActionType.UPDATE_USER_SUCCES, props<{user: User}>());
+export const updateUserEffectFailureAction = createAction(UserEffectsActionType.UPDATE_USER_FAILURE, props<{ code: number, reason: string }>());
 
 export const  deleteUserEffectAction = createAction(UserEffectsActionType.DELETE_USER,props<{id: number}>());
-export  const deleteUserEffectSuccessAction = createAction(UserEffectsActionType.DELETE_USER_SUCCES, props<{id: number}>());
-export  const deleteUserEffectFailureAction = createAction(UserEffectsActionType.DELETE_USER_FAILURE, props<{ code: number, reason: string }>());
+export const deleteUserEffectSuccessAction = createAction(UserEffectsActionType.DELETE_USER_SUCCES, props<{id: number}>());
+export const deleteUserEffectFailureAction = createAction(UserEffectsActionType.DELETE_USER_FAILURE, props<{ code: number, reason: string }>());
 
 @Injectable()
 export class UserEffects {

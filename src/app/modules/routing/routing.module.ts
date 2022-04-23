@@ -8,6 +8,8 @@ import {AuthGuard} from '@auth0/auth0-angular';
 import { RoutesPaths } from './routing.type';
 import { AppComponent } from 'src/app/app.component';
 import { ProfileComponent } from 'src/app/views/profile/profile.component';
+import { BookComponent } from 'src/app/views/books/book/book.component';
+import { EditBookComponent } from 'src/app/views/books/edit-book/edit-book.component';
 
 const routes: Routes = [
   {
@@ -21,13 +23,18 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: RoutesPaths.USERS,
-    component: UsersComponent,
+    path: `${RoutesPaths.BOOK}/:id`,
+    component: BookComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: RoutesPaths.PROFILE,
-    component: ProfileComponent,
+    path: `${RoutesPaths.BOOK}/edit/:id`,
+    component: EditBookComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: RoutesPaths.USERS,
+    component: UsersComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -40,6 +47,11 @@ const routes: Routes = [
     component: EditUserComponent,
     canActivate: [AuthGuard]
   },
+  {
+    path: RoutesPaths.PROFILE,
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({

@@ -42,4 +42,5 @@ export const userReducer = createReducer(
     })
     return {
       ...state, entities: updatedUsers
-    }}))
+    }})
+    );
