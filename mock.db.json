@@ -118,6 +118,30 @@
         }
       ],
       "id": 36
+    },
+    {
+      "title": "krkjrkjre",
+      "authors": [
+        {
+          "author": "krejkrekjre"
+        },
+        {
+          "author": "rererere"
+        }
+      ],
+      "id": 37
+    },
+    {
+      "title": "AVE",
+      "authors": [
+        {
+          "author": "RE"
+        },
+        {
+          "author": "RE"
+        }
+      ],
+      "id": 38
     }
   ],
   "users": [
@@ -165,16 +189,6 @@
       "id": 7
     },
     {
-      "firstname": "fd",
-      "lastname": "fd",
-      "listOfBooksId": [
-        31,
-        32,
-        33
-      ],
-      "id": 8
-    },
-    {
       "firstname": "AMA",
       "lastname": "AMA",
       "listOfBooksId": [
@@ -182,6 +196,14 @@
         32
       ],
       "id": 9
+    },
+    {
+      "firstname": "AVEC",
+      "lastname": "AAA",
+      "listOfBooksId": [
+        30
+      ],
+      "id": 10
     }
   ]
 }
