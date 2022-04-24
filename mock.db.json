@@ -123,9 +123,8 @@
   ],
   "users": [
     {
-      "firstname": "Jihed",
-      "lastname": "Cherni",
-      "listOfBooksId": null,
+      "firstname": "Mohamed",
+      "lastname": "Bouhawala",
       "id": 4
     },
     {
@@ -137,73 +136,18 @@
       "id": 5
     },
     {
-      "firstname": "Mohamed",
-      "lastname": "Ben Kacem",
-      "listOfBooksId": [
-        9
-      ],
-      "id": 8
-    },
-    {
-      "firstname": "Dorra",
-      "lastname": "Saihi",
-      "listOfBooksId": [
-        7,
-        9
-      ],
-      "id": 9
-    },
-    {
-      "firstname": "Abderrahmen",
-      "lastname": "Zargouni",
-      "listOfBooksId": [
-        2,
-        3
-      ],
-      "id": 10
-    },
-    {
-      "firstname": "Farouk",
-      "lastname": "Manai",
-      "listOfBooksId": [
-        2,
-        3
-      ],
-      "id": 11
-    },
-    {
-      "firstname": "Yassine",
-      "lastname": "Khalfaoui",
-      "listOfBooksId": [
-        2,
-        3
-      ],
-      "id": 12
+      "firstname": "MAROUAN",
+      "lastname": "CHAOUACHI",
+      "id": 16
     },
     {
       "firstname": "Salim",
       "lastname": "Ben Brahim",
-      "listOfBooksId": null,
-      "id": 13
-    },
-    {
-      "firstname": "Tarak",
-      "lastname": "Sliti",
       "listOfBooksId": [
-        2
-      ],
-      "id": 14
-    },
-    {
-      "firstname": "Mahmoud",
-      "lastname": "Najjar",
-      "listOfBooksId": [
-        1,
-        2,
         3,
         4
       ],
-      "id": 15
+      "id": 17
     }
   ]
 }

@@ -15,7 +15,7 @@
             <th scope="row">{{i+1}}</th>
             <td (click)="selectUser(user.id)">{{user.firstname}}</td>
             <td (click)="selectUser(user.id)">{{user.lastname}}</td>
-            <td (click)="selectUser(user.id)">{{user.listOfBooksId === null ? 0 : user.listOfBooksId.length }}</td>
+            <td (click)="selectUser(user.id)">{{! user.listOfBooksId ? 0 : user.listOfBooksId.length }}</td>
             <td class="text-center">
               <button (click)="editUser(user.id)"
                       class="btn btn-primary text-center">

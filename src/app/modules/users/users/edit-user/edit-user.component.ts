@@ -17,6 +17,8 @@ import { setSelectedUserIdAction } from 'src/app/modules/store/states/user/user.
 })
 export class EditUserComponent implements OnInit {
 
+   id: string = '';
+
   user: Observable<User | undefined> = this.store.pipe(select(selectedUserSelector));
   /* userBooksTitles: Observable<string[]> = this.store.pipe(
     select(selectedBookTitleBySelectedUser)
@@ -30,7 +32,10 @@ export class EditUserComponent implements OnInit {
 
   routerIdTriggerSubscription: Subscription | undefined;
   routerIdTrigger: Observable<any> = this.activatedRoute.params.pipe(
-      tap(params => this.store.dispatch(setSelectedUserIdAction({id: params.id}))));
+      tap(params =>{ this.store.dispatch(setSelectedUserIdAction({id: params.id}));
+      this.id = params.id;
+        }
+      ));
 
   constructor(private readonly activatedRoute: ActivatedRoute,
               private router: Router,
@@ -40,8 +45,9 @@ export class EditUserComponent implements OnInit {
     this.routerIdTriggerSubscription = this.routerIdTrigger.subscribe();
   }
 
-  updateUser(user: User, index: number | string | undefined): void {
-    this.store.dispatch(updateUserEffectAction({user}));
+  updateUser(user: User): void {
+
+    this.store.dispatch(updateUserEffectAction({user, id: this.id}));
     this.router.navigate(['users'])
   }
 

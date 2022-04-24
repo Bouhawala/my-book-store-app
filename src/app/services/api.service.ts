@@ -37,8 +37,8 @@ export class ApiService {
     return this.httpClient.post<User>(`${environment.apiUrl}/users`,user);
   }
 
-  updateUser(user: User): Observable<User> {
-    return this.httpClient.put<User>(`${environment.apiUrl}/users/`+user?.id,user);
+  updateUser(user: User, id: string | number): Observable<User> {
+    return this.httpClient.put<User>(`${environment.apiUrl}/users/`+id,user);
   }
 
   removeUser(id: number): Observable<User> {
