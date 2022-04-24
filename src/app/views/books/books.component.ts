@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
-import { Router } from '@angular/router';
 import { Book, Books } from 'src/app/types/book.type';
 import { booksSelector } from 'src/app/modules/store/states/book/book.selector';
-import { deleteBookEffectAction, saveNewBookAction } from 'src/app/modules/store/effects/book.effects';
+import { saveNewBookAction } from 'src/app/modules/store/effects/book.effects';
 
 @Component({
   selector: 'app-books',
@@ -27,7 +26,6 @@ export class BooksComponent implements OnInit {
   books: Observable<Books> = this.store.pipe(select(booksSelector));
 
   constructor(private readonly store: Store,
-              private router:Router,
               private formBuilder: FormBuilder) { 
     
     this.addOneBookForm = this.formBuilder.group({

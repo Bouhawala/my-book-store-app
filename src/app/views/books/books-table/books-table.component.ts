@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { deleteBookEffectAction } from 'src/app/modules/store/effects/book.effects';
@@ -7,7 +7,8 @@ import { Book, Books } from 'src/app/types/book.type';
 @Component({
   selector: 'app-books-table',
   templateUrl: './books-table.component.html',
-  styleUrls: ['./books-table.component.scss']
+  styleUrls: ['./books-table.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BooksTableComponent implements OnInit {
 
