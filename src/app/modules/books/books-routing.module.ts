@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@auth0/auth0-angular';
-import { RoutesPaths } from '../modules/routing/routing.type';
+import { RoutesPaths } from '../routing/routing.type';
 import { BookComponent } from './books/book/book.component';
 import { BooksComponent } from './books/books.component';
 import { EditBookComponent } from './books/edit-book/edit-book.component';

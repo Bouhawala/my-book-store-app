@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@auth0/auth0-angular';
-import { RoutesPaths } from '../modules/routing/routing.type';
 import { UserComponent } from './users/user/user.component';
 import { UsersComponent } from './users/users.component';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
+import { RoutesPaths } from '../routing/routing.type';
 
 const routes: Routes = [
   {

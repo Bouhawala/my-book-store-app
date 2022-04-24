@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Router } from "@angular/router";
 import { User, Users } from 'src/app/types/user.type';
 import { usersSelector } from 'src/app/modules/store/states/user/user.selector';
 import { booksSelector } from 'src/app/modules/store/states/book/book.selector';
