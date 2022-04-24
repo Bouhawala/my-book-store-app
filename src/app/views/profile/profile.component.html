@@ -1,4 +1,15 @@
 <div *ngIf="profile$ | async as profile">
-    <img [src]="profile.picture" />
-    <pre>{{ profile | json }}</pre>
+    <div class="row justify-content-center">
+        <div class="col-4" style="display: flex;">
+            <img [src]="profile.picture"/>
+            Firstname: {{profile.family_name}}
+            <br>
+            Lastname: {{profile.given_name}}
+            <br>
+            Email: {{profile.email}}
+            <br>
+            Email Verified: {{ profile.email_verified ? 'Yes' : 'No' }} 
+        </div>
+    </div>
 </div>
+
