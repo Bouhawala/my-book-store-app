@@ -12,7 +12,7 @@ export interface UserState {
   selectedUserId: number | null;
 }
 
-const initialUserState: UserState = {
+export const initialUserState: UserState = {
   entities: [],
   selectedUserId: null,
 }
@@ -44,3 +44,4 @@ export const userReducer = createReducer(
       ...state, entities: updatedUsers
     }})
     );
+

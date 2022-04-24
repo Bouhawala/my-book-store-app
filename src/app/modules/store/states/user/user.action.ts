@@ -12,7 +12,7 @@ export enum UserActionType {
 
 export const addOneUserAction = createAction(UserActionType.ADD_ONE_USER, props<{user: User}>());
 export const updateUserAction = createAction(UserActionType.UPDATE_USER, props<{ user: User}>());
-export const setAllUserAction = createAction(UserActionType.SET_ALL_USER, props<{users: Users}>());
+export const setAllUserAction = createAction(UserActionType.SET_ALL_USER, props<{users: Users}>()); // as any as { new (users: Users): any }
 export const setSelectedUserIdAction = createAction(UserActionType.SET_ONE_USER_ID, props<{id: number}>());
 export const setSelectedUserAction = createAction(UserActionType.SET_ONE_USER, props<{id: number}>());
 export const deleteUserAction = createAction(UserActionType.DELETE_USER, props<{id: number}>());
