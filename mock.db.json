@@ -1,160 +1,127 @@
 {
   "books": [
     {
-      "title": "mohamed",
+      "title": "Squire",
       "authors": [
         {
-          "author": "aymen"
+          "author": "Nadia Shammas"
         },
         {
-          "author": "sami"
+          "author": "Sara Alfageeh"
         }
       ],
-      "id": 28
+      "id": 1
     },
     {
-      "title": "fdfdfd",
+      "title": "Blackout",
       "authors": [
         {
-          "author": "fdfdfd"
+          "author": "Dhonielle Clayton"
         },
         {
-          "author": "fdfdfd"
+          "author": "Tiffany D. Jackson"
+        },
+        {
+          "author": "Nic Stone"
+        },
+        {
+          "author": "Angie Thomas"
+        },
+        {
+          "author": "Ashley Woodfolk"
+        },
+        {
+          "author": "Nicola Yoon"
         }
-      ],
-      "id": 30
-    },
-    {
-      "title": "rrrrrrrrrrrrrrrrr",
-      "authors": [
-        {
-          "author": "rrrrrrrrrrrrrrrrrrrrrrrrrrr"
-        },
-        {
-          "author": "rrrrrrrrrrrrrrrrrr"
-        },
-        {
-          "author": "rrrrrrrrrrrrrrrrrrrrrrrrr"
-        },
-        {
-          "author": "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"
-        },
-        {
-          "author": "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"
-        }
-      ],
-      "id": 31
-    },
-    {
-      "title": "rrrrrrrrrrrrrrrrrrrrrrrr",
-      "authors": [
-        {
-          "author": "rrrrrrrrrrrrrrrrrrrrrrr"
-        },
-        {
-          "author": "rrrrrrrrrrrrrrrrrrrrrrrrrrr"
-        },
-        {
-          "author": "rrrrrrrrrrrrrrrrrrrrrrrrrrra"
-        },
-        {
-          "author": "rrrrrrrrrrrrrrrrrrrrrrrrrrra"
-        },
-        {
-          "author": "rrrrrrrrrrrrrrrrrrrrrrrrrrra"
-        },
-        {
-          "author": "rrrrrrrrrrrrrrrrrrrrrrrrrrra"
-        },
-        {
-          "author": "rrrrrrrrrrrrrrrrrrrrrrrrrrra"
-        }
-      ],
-      "id": 32
-    },
-    {
-      "title": "fdfdfdfd",
-      "authors": [
-        {
-          "author": "fdfd"
-        },
-        {
-          "author": "fdfdfd"
-        },
-        {
-          "author": "fdfd"
-        }
-      ],
-      "id": 33
-    },
-    {
-      "title": "ADAMA",
-      "authors": [
-        1,
-        {
-          "author": "REE"
-        }
-      ],
-      "id": 34
-    },
-    {
-      "title": "ADAMA",
-      "authors": [
-        "",
-        {
-          "author": "RE"
-        }
-      ],
-      "id": 35
-    },
-    {
-      "title": "ADAMA",
-      "authors": [
-        {
-          "author": "TRAO"
-        },
-        {
-          "author": "REEE"
-        }
-      ],
-      "id": 36
-    },
-    {
-      "title": "krkjrkjre",
-      "authors": [
-        {
-          "author": "krejkrekjre"
-        },
-        {
-          "author": "rererere"
-        }
-      ],
-      "id": 37
-    },
-    {
-      "title": "AVE",
-      "authors": [
-        {
-          "author": "RE"
-        },
-        {
-          "author": "RE"
-        }
-      ],
-      "id": 38
-    }
-  ],
-  "users": [
-    {
-      "firstname": "Karim",
-      "lastname": "Gharbi",
-      "listOfBooksId": [
-        5,
-        6,
-        7
       ],
       "id": 2
     },
+    {
+      "title": "Sisters of the Snake",
+      "authors": [
+        {
+          "author": "Sasha Nanua"
+        },
+        {
+          "author": "Sarena Nanua"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "title": "Beyond the End of the World",
+      "authors": [
+        {
+          "author": "Amie Kaufman"
+        },
+        {
+          "author": "Meagan Spooner"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "title": "Vahana Masterclass\t",
+      "authors": [
+        {
+          "author": "Alfredo Covelli"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "title": "Right Under Our Nose\t",
+      "authors": [
+        {
+          "author": "R. Giridharan"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "title": " The Monarchs",
+      "authors": [
+        {
+          "author": "Kass Morgan"
+        },
+        {
+          "author": "Danielle Paige"
+        }
+      ],
+      "id": 7
+    },
+    {
+      "title": "Names of the Women\t",
+      "authors": [
+        {
+          "author": "Jeet Thayil"
+        }
+      ],
+      "id": 8
+    },
+    {
+      "title": "Elephant in the Womb",
+      "authors": [
+        {
+          "author": "Kalki Koechlin"
+        }
+      ],
+      "id": 9
+    },
+    {
+      "title": "Honor Among Thieves",
+      "authors": [
+        {
+          "author": "Rachel Caine"
+        },
+        {
+          "author": "Ann Aguirre"
+        }
+      ],
+      "id": 10
+    }
+  ],
+  "users": [
     {
       "firstname": "Jihed",
       "lastname": "Cherni",
@@ -170,31 +137,73 @@
       "id": 5
     },
     {
-      "firstname": "Yassine",
-      "lastname": "Khalfaoui",
+      "firstname": "Mohamed",
+      "lastname": "Ben Kacem",
       "listOfBooksId": [
-        4,
-        5,
-        7
+        9
       ],
-      "id": 6
+      "id": 8
     },
     {
-      "firstname": "AMA",
-      "lastname": "AMA",
+      "firstname": "Dorra",
+      "lastname": "Saihi",
       "listOfBooksId": [
-        31,
-        32
+        7,
+        9
       ],
       "id": 9
     },
     {
-      "firstname": "AVEC",
-      "lastname": "AAA",
+      "firstname": "Abderrahmen",
+      "lastname": "Zargouni",
       "listOfBooksId": [
-        30
+        2,
+        3
       ],
       "id": 10
+    },
+    {
+      "firstname": "Farouk",
+      "lastname": "Manai",
+      "listOfBooksId": [
+        2,
+        3
+      ],
+      "id": 11
+    },
+    {
+      "firstname": "Yassine",
+      "lastname": "Khalfaoui",
+      "listOfBooksId": [
+        2,
+        3
+      ],
+      "id": 12
+    },
+    {
+      "firstname": "Salim",
+      "lastname": "Ben Brahim",
+      "listOfBooksId": null,
+      "id": 13
+    },
+    {
+      "firstname": "Tarak",
+      "lastname": "Sliti",
+      "listOfBooksId": [
+        2
+      ],
+      "id": 14
+    },
+    {
+      "firstname": "Mahmoud",
+      "lastname": "Najjar",
+      "listOfBooksId": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "id": 15
     }
   ]
 }
